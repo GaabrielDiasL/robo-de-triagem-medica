@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - .:/workspaces
+    ports:
+      - 8888:8888
+      - 8501:8501
+      - 5001:5001
+    environment:
+      - ENV_PATH=/workspaces/.env
